@@ -1,12 +1,9 @@
+#include "common.hpp"
 #include <iostream>
 
 using namespace std;
 
-namespace meta::isa {
-int foo() { return 1; }
-} // namespace meta::isa
-
 int main() {
-  auto x = meta::isa::foo();
+  auto va = meta::Fib<8>::value;
   return 0;
 }
