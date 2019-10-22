@@ -23,8 +23,14 @@ template <Num N> struct Fib {
 };
 
 template <> struct Fib<1> { constexpr static Num value = 0; };
-
 template <> struct Fib<2> { constexpr static Num value = 1; };
-
 template <> struct Fib<3> { constexpr static Num value = 1; };
+
+template <typename X, Num N> struct Pow {
+  constexpr static X value(const X &x) { return Pow<X, N - 1>::value(x) * x; }
+};
+
+template <typename X> struct Pow<X, 1> {
+  constexpr static X value(const X &x) { return x; }
+};
 } // namespace meta
