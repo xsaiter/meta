@@ -10,12 +10,12 @@
   },
   "tasks": [
     {
-      "label": "cmake build",
+      "label": "meta build",
       "type": "shell",
       "options": {
         "cwd": "${workspaceRoot}"
       },
-      "args": ["./build.sh"],
+      "args": ["make"],
       "group": {
         "kind": "build",
         "isDefault": true
